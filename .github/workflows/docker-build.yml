@@ -28,3 +28,12 @@ jobs:
           context: .
           push: true
           tags: mrxianyu/derper:latest
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: mrxianyu/derper
+          readme-filepath: ./README.md
+          short-description: ${{ github.event.repository.description }}
