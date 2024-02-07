@@ -7,7 +7,7 @@ RUN apk update && \
     go install tailscale.com/cmd/derper@main && \
     upx -9 /go/bin/derper
 
-FROM gcr.io/distroless/base-debian12:latest
+FROM alpine:latest
 
 WORKDIR /app
 
